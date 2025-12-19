@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+
+<style>
+/* ===== 기본 설정 ===== */
+body{
+    margin:0;
+    font-family:"Segoe UI",Tahoma,sans-serif;
+    background:#f5f2fa;
+    color:#333;
+}
+
+/* ===== Header ===== */
+header{
+    background:linear-gradient(135deg,#6a1b9a,#9c27b0);
+    color:#fff;
+    padding:40px 20px;
+    text-align:center;
+    animation:fadeDown 1s ease;
+}
+header img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:4px solid #fff;
+    object-fit:cover;
+    margin-bottom:15px;
+    transition:.4s;
+}
+header img:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* ===== Section ===== */
+section{
+    max-width:900px;
+    margin:30px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    animation:fadeUp 1s ease;
+    text-align:center;                 /* 👉 จัดข้อความกลาง */
+    transition:.4s;
+}
+section:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(106,27,154,.25);
+}
+
+h2{
+    color:#6a1b9a;
+    border-bottom:2px solid #e1bee7;
+    display:inline-block;
+    padding-bottom:6px;
+    margin-bottom:20px;
+}
+
+/* ===== Text Effect ===== */
+p,li{
+    font-size:16px;
+    line-height:1.8;
+    transition:.3s;
+}
+p:hover,li:hover{
+    color:#6a1b9a;
+    transform:scale(1.03);
+}
+
+ul{
+    list-style-position:inside;
+    padding-left:0;
+}
+
+/* ===== Portfolio ===== */
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+.portfolio-item{
+    background:#faf7fd;
+    border:1px solid #e1bee7;
+    border-radius:12px;
+    padding:15px;
+    transition:.4s;
+}
+.portfolio-item:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(106,27,154,.25);
+}
+.portfolio-item img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* ===== Contact Icons ===== */
+.icon-contact{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+.icon-btn{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    background:#6a1b9a;
+    color:#fff;
+    text-decoration:none;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+.icon-btn:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(106,27,154,.4);
+}
+.icon-btn.line{background:#00c300}
+
+/* Tooltip */
+.icon-btn::before{
+    content:attr(title);
+    position:absolute;
+    bottom:75px;
+    background:rgba(106,27,154,.95);
+    color:#fff;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+    opacity:0;
+    transform:translateY(10px);
+    transition:.3s;
+    white-space:nowrap;
+}
+.icon-btn:hover::before{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Ripple */
+.ripple::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle,rgba(255,255,255,.6) 10%,transparent 10.01%);
+    transform:scale(10);
+    opacity:0;
+}
+.ripple:active::after{
+    transform:scale(0);
+    opacity:1;
+    transition:0s;
+}
+
+/* ===== Floating Contact ===== */
+.floating-contact{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:999;
+}
+
+/* ===== Footer ===== */
+footer{
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== Responsive ===== */
+@media(max-width:600px){
+    header img{width:120px;height:120px}
+    h1{font-size:24px}
+    p,li{font-size:15px}
+    .floating-contact{right:15px;bottom:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="05.jpg">
+    <h1>นางสาวเจนจิรา กองแก้ว</h1>
+    <p>Portfolio ส่วนตัว</p>
+</header>
+
+<section>
+<h2>ประวัติย่อ</h2>
+<p>
+นางสาวเจนจิรา กองแก้ว ชื่อเล่น เจน  
+เกิดวันที่ 30 กันยายน 2549 อายุ 19 ปี
+</p>
+</section>
+
+<section>
+<h2>ประวัติการศึกษา</h2>
+<ul>
+<li>อนุบาล : โรงเรียนเทศบาล ๒ บ้านตลาดเก่า</li>
+<li>ประถมศึกษา : โรงเรียนเทศบาล ๒ บ้านตลาดเก่า</li>
+<li>มัธยมศึกษา : โรงเรียนนครนายกวิทยาคม</li>
+<li>ปวช./ปวส. : วิทยาลัยเทคนิคนครนายก</li>
+<li>สาขา : เทคโนโลยีสารสนเทศ</li>
+</ul>
+</section>
+
+<section>
+<h2>แฟ้มเก็บผลงาน</h2>
+<div class="portfolio-grid">
+<div class="portfolio-item"><img src="01.png"></div>
+<div class="portfolio-item"><img src="02.png"></div>
+<div class="portfolio-item"><img src="03.png"></div>
+<div class="portfolio-item"><img src="04.png"></div>
+</div>
+</section>
+
+<section>
+<h2>เป้าหมาย</h2>
+<p>อยากเรียนให้จบ ทำงานดี ๆ จะได้รวย ๆ ปัง ๆ ✨</p>
+</section>
+
+<section>
+<h2>ช่องทางการติดต่อ</h2>
+<div class="icon-contact">
+<a class="icon-btn ripple" href="mailto:jan0963841586@gmail.com" title="Email">📧</a>
+<a class="icon-btn ripple" href="tel:0823255684" title="โทรศัพท์">📞</a>
+<a class="icon-btn ripple" href="https://www.facebook.com/share/17r45aUPP1/?mibextid=wwXIfr" target="_blank" title="Facebook">🌐</a>
+<a class="icon-btn ripple" href="https://www.instagram.com/janjira_xz" target="_blank" title="Instagram">📷</a>
+<a class="icon-btn ripple line" href="https://line.me/ti/p/cnw43mJW-1" target="_blank" title="LINE">💬</a>
+</div>
+</section>
+
+<div class="floating-contact">
+<a class="icon-btn" href="mailto:jan0963841586@gmail.com" title="Email">📧</a>
+<a class="icon-btn line" href="https://line.me/ti/p/cnw43mJW-1" title="LINE">💬</a>
+</div>
+
+<footer>
+© 2025 Portfolio
+</footer>
+
+</body>
+</html>
